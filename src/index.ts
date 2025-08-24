@@ -1,19 +1,17 @@
-
 import express from "express";
-import "dotenv/config"
+import "dotenv/config";
+import { env } from "process";
 
 const app = express();
-const port: number = 3000;
+const port: number = Number(env.port) || 3000; //could crash
 
 // (bara för test) const secret = process.env.MY_GLOBAL_TEST_SECRET
 
-app.get("/", (req, res) => {
-  res.status(200).send("<h2> My website </h2> <p> Hello world </p>");
+app.get("/", (request, response) => {
+  response.send("Hello world!");
 });
 
 //start server on port variable
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
-  // (test) console.log(secret) //bara för debugging
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Listening to port ${port}`);
 });
-
