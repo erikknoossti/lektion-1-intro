@@ -3,7 +3,7 @@ import "dotenv/config";
 import { env } from "process";
 
 const app = express();
-const port: number = Number(env.port) || 3000; //could crash
+const port: number = Number(process.env.port) || 3000; //could crash
 
 // (bara för test) const secret = process.env.MY_GLOBAL_TEST_SECRET
 
