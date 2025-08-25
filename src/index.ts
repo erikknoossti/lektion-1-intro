@@ -5,7 +5,7 @@ import "dotenv/config"; // oneliner for configuration
 import { closeDB, runDB } from "./db/database.js";
 
 const app = express();
-const port: number = Number(process.env.port); //could crash
+const port: number = Number(process.env.PORT); //could crash
 
 // (bara för test) const secret = process.env.MY_GLOBAL_TEST_SECRET
 
