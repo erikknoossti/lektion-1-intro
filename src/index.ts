@@ -25,7 +25,7 @@ app.post("/user", (_req: Request, res: Response) => {
 //  Get user endpoint
 app.get("/user", (_req: Request, res: Response) => {
   const user: User = { id: 1, name: "Alice", email: "alice@example.com" };
-  res.status(200).send(user);
+  res.send({user: user});
 });
 
 
