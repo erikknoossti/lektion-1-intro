@@ -22,11 +22,6 @@ app.post("/user", (_req: Request, res: Response) => {
   res.status(201).send(user);
 });
 
-//  Get user endpoint
-app.get("/user", (_req: Request, res: Response) => {
-  const user: User = { id: 1, name: "Alice", email: "alice@example.com" };
-  res.send({user: user});
-});
 
 
 function resolvePort(): number {
